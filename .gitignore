@@ -1,0 +1,6 @@
+configs.json
+.idea
+.vscode
+venv
+*.csv
+*.txt

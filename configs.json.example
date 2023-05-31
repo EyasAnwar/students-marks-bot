@@ -1,0 +1,18 @@
+{
+    "database":{
+        "host":"",
+        "user":"",
+        "password":"",
+        "database-name":""
+    },
+    "telegram-bot":{
+        "token":"",
+        "secret":"",
+        "webhook":""
+    },
+    "marks":{
+        "template-message":"message.txt",
+        "marks-file":"students.csv"
+    },
+    "proxy-url":""
+}
