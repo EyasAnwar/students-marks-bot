@@ -4,3 +4,4 @@ configs.json
 venv
 *.csv
 *.txt
+__pycache__/

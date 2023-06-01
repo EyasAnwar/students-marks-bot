@@ -11,8 +11,8 @@
         "webhook":""
     },
     "marks":{
-        "template-message":"message.txt",
-        "marks-file":"students.csv"
+        "template-message":"",
+        "marks-file":""
     },
     "proxy-url":""
 }
