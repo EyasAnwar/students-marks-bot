@@ -6,11 +6,11 @@ from TemplateFiller import TemplateFiller
 from Database import Database
 import json
 from unidecode import unidecode
-import json
+import os
 
-
-messages = json.load(open('messages-ar.json'))
-configs = json.load(open('configs.json'))
+my_dir = os.path.dirname(__file__)
+messages = json.load(open(os.path.join(my_dir, 'messages-ar.json')))
+configs = json.load(open(os.path.join(my_dir, 'configs.json')))
 
 proxy_url = configs['proxy-url']
 telepot.api._pools = {
@@ -20,6 +20,8 @@ telepot.api._onetime_pool_spec = (urllib3.ProxyManager, dict(proxy_url=proxy_url
 
 secret = configs['telegram-bot']['secret']
 bot = telepot.Bot(configs['telegram-bot']['token'])
+print(configs['telegram-bot']['webhook'])
+print(configs['telegram-bot']['webhook'].format(secret))
 bot.setWebhook(configs['telegram-bot']['webhook'].format(secret), max_connections=1)
 marks_finder = MarksFinder(configs['marks']['marks-file'])
 template_filler = TemplateFiller(configs['marks']['template-message'])
