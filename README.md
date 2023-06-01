@@ -46,6 +46,30 @@ For changing the error messages you should create your own `messages.json` and e
 }
 ```
 
+### Database
+You should create a mysql database that has two tables as following:
+#### Log table
+This table records all the requests.
+
+Table create sql:
+```sql
+CREATE TABLE `log` (
+  `request_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `content` json DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+```
+
+#### Student users table
+This table pairs the student's Telegram user ID with their student ID, ensuring that users cannot request marks for other students.
+
+Table create sql:
+```sql
+CREATE TABLE `student_users` (
+  `std_id` varchar(10) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+```
+
 ## Contact
 
 Iyas Ashaikhkhalil - [Linkedin](https://www.linkedin.com/in/eyaskhalil/) - eyasanwar@gmail.com
